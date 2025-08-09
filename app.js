@@ -18,5 +18,19 @@ function agregarNombre() {
 
     nombres.push(nombre);
     input.value ="";
+    renderLista();
     resultado.textContent = '';
+}
+
+function renderLista() {
+    lista.innerHTML='';
+    if (nombres.length === 0) {
+        lista.innerHTML = '<li>No hay nombres</li>'
+        return;
+    }
+    nombres.forEach((n) => {
+        const li = document.createElement('li');
+        li.textContent = n;
+        lista.appendChild(li);
+    });
 }
