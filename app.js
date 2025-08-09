@@ -34,3 +34,14 @@ function renderLista() {
         lista.appendChild(li);
     });
 }
+
+function sortearNombre() {
+    if (nombres.length === 0) {
+        resultado.textContent = "No hay nombres";
+        return;
+    }
+
+    const index = Math.floor(Math.random()* nombres.length);
+    const ganador = nombres[index];
+    resultado.innerHTML = `<li> Tu amigo es <strong>${ganador}</strong></li>`
+}
